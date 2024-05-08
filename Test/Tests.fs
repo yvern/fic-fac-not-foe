@@ -77,5 +77,6 @@ let ``can't repeat play`` () =
     test <@
       mkBoard 3
       |> play X (0,0)
+      |> Result.bind (play O (0,0))
       |> Result.isError
       @>
